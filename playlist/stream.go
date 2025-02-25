@@ -95,10 +95,6 @@ func (s *Streamer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 		return
 	}
-
-	for {
-		<-ctx.Done()
-
-		return
-	}
+	<-ctx.Done()
+	return
 }
